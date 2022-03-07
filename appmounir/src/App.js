@@ -3,7 +3,7 @@ import './App.css';
 import Navbar from './Navbar';
 import Button from './component/Boutton';
 import Tasklist from './component/TaskList';
-import MonTitre from './component/MonTitre';
+import MonForm from './component/MonForm';
 
 const myObject = {
   name: 'Coni'
@@ -49,7 +49,7 @@ function App() {
         <Button premsProps={"fion"}/>
         <img src={logo} className="App-logo" alt="logo" />
         <Tasklist list={myTaskList} />
-        <MonTitre/>
+        <MonForm/>
       </header>
     </div>
   );
