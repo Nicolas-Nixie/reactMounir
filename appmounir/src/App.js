@@ -1,6 +1,4 @@
-import logo from './logo.svg';
 import './App.css';
-import Navbar from './Navbar';
 import Button from './component/Boutton';
 import Tasklist from './component/TaskList';
 import MonForm from './component/MonForm';
@@ -44,12 +42,9 @@ function App() {
   ]
   return (
     <div className="App">
-      <Navbar/>
       <header className="App-header">
         <Button premsProps={"fion"}/>
-        <img src={logo} className="App-logo" alt="logo" />
         <Tasklist list={myTaskList} />
-        <MonForm/>
       </header>
     </div>
   );
