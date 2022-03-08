@@ -3,6 +3,7 @@ import ContentTask from "./ContentTask";
 import MonForm from "./MonForm";
 
 const Tasklist = (props) => {
+    
     const [list, setList] = useState(props.list);
 
     const handleSubmit = (event, content) =>  {

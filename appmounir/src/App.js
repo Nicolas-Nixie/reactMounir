@@ -2,6 +2,7 @@ import './App.css';
 import Button from './component/Boutton';
 import Tasklist from './component/TaskList';
 import MonForm from './component/MonForm';
+import TaskList from './component/TaskList-M';
 
 const myObject = {
   name: 'Coni'
@@ -45,6 +46,7 @@ function App() {
       <header className="App-header">
         <Button premsProps={"fion"}/>
         <Tasklist list={myTaskList} />
+        <TaskList list={myTaskList} />
       </header>
     </div>
   );
