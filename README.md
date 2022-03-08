@@ -22,3 +22,5 @@ Puis nous avons fait un tableau d'objets dont le résultat sur notre page est :
 ![listObjet](https://user-images.githubusercontent.com/63167717/157195610-2a85f5ef-1c10-4cb4-8f03-0ca381ac0b5d.png)
 
 Puis nous avons fais dans champs nous permetant d'ajouter des lignes a notre tableau :
+
+![Envoi formulaire](https://user-images.githubusercontent.com/63167717/157208371-089a6664-ba41-4bc4-b899-fdc70889d28c.png)
