@@ -1,5 +1,7 @@
 # Rendu de projet
 
+Nous utilisons tout au long du projet le langage JSX qui permets de facilité l'écriture du code en des applications Réact.
+
 Decouverte du react a traver les premiers composants. Nous avons vu que chaque composant est une focntion ecrit de la fonction suivante : 
 
 function MonComposant () => {
