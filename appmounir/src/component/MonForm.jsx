@@ -1,41 +1,32 @@
 import React from "react";
-import ReactDOM from 'react-dom';
 import { useState } from "react";
 
 const MonForm = (props) => {
-
-    const [inputs, setInputs] = useState({});
+  const [content, setState] = useState({title: "",time: "",complexity: "",room: ""});   
 
   const handleChange = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
-    setInputs(values => ({...values, [name]: value}))
-  }
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    alert(inputs);
+    setState ({...content, [event.target.name]: event.target.value})
   }
   
     return (
-        <form>
+        
+        <form onSubmit={event => props.onSubmit(event, content)}>
             <label>
-                Titre :<input type="text" name="Titre" value={inputs.title} onChange={handleChange}/>
+                <input type="text" name="title" value={content.title} onChange={handleChange}/>
             </label>
             <label>
-                Durée :<input type="text" name="name" value={inputs.time} onChange={handleChange}/>
+                <input type="number" name="time" value={content.time} onChange={handleChange}/>
             </label>
             <label>
-                Difficulté :<input type="text" name="name" value={inputs.complexity} onChange={handleChange}/>
+                <input type="number" name="complexity" value={content.complexity} onChange={handleChange}/>
             </label>
             <label>
-                Pièce :<input type="text" name="name" value={inputs.room} onChange={handleChange}/>
+                <input type="text" name="room" value={content.room} onChange={handleChange}/>
             </label>
-        <input type="submit" value="Envoyer" />
+        <input type={"submit"} value="Envoyer" />
         </form>
+        
     )
 }
-
-ReactDOM.render(<MonForm/>, document.getElementById('root'))
 
 export default MonForm;

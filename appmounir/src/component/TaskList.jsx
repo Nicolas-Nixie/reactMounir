@@ -1,7 +1,15 @@
-import React from "react";
+import React, {useState} from "react";
 import ContentTask from "./ContentTask";
+import MonForm from "./MonForm";
 
 const Tasklist = (props) => {
+    const [list, setList] = useState(props.list);
+
+    const handleSubmit = (event, content) =>  {
+    event.preventDefault();
+    setList([...list, content]);
+    console.log([...list, content])
+    }
 
     return (
         <div>
@@ -15,9 +23,10 @@ const Tasklist = (props) => {
                     </tr>
                 </thead>
                 <tbody>
-                {props.list.map( taskObject => <ContentTask content={taskObject}/>)}
+                {list.map( taskObject => <ContentTask content={taskObject}/>)}
                 </tbody>
             </table>
+            <MonForm onSubmit={handleSubmit}/>
         </div>
     )
 }
