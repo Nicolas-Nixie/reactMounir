@@ -3,6 +3,7 @@ import Button from './component/Boutton';
 import Tasklist from './component/TaskList';
 import MonForm from './component/MonForm';
 import TaskList from './component/TaskList-M';
+import { Link } from "react-router-dom";
 
 const myObject = {
   name: 'Coni'
@@ -32,7 +33,7 @@ function App() {
       complexity: 1,
       room: 'cuisine'
     },
-    {
+    { 
       title: 'rangement',
       time: 30,
       complexity: 2,
@@ -44,6 +45,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <Link to="/rats">Rats</Link>
         <Button premsProps={"fion"}/>
         <Tasklist list={myTaskList} />
         <TaskList list={myTaskList} />

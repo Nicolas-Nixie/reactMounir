@@ -1,21 +1,17 @@
-import { useState } from "react"
+ import { useState } from "react"
 import Task from "./Task-M"
 
 const TaskList = (props) => {
-
     const [taskListArray, setTaskListArray] = useState(props.list)
-
-    const handleSubmit = (event, value) => {
+    const handleSubmit = (event, value, idFromTask) => {
         event.preventDefault()
         console.log('event: ', event)
         console.log('value inside TaskList comp: ', value)
-
         setTaskListArray((previousState) => {
-            console.log('previous State: ', previousState)
+            
             return previousState
         })
     }
-
     return (
         <>
            { taskListArray.map((task)=> {
@@ -24,5 +20,4 @@ const TaskList = (props) => {
         </>
     )
 }
-
-export default TaskList  
+export default TaskList
