@@ -1,4 +1,3 @@
-import Navbar from '../Components/Navbar/Navbar';
 import Home from '../Components/Home/Home';
 import ImagePlayer from "../Components/Home/Caroussel/Caroussel" 
 import Icon from '../Components/Home/Icons/Icon';
@@ -12,7 +11,6 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar/>
       <Home/>
       <div className='container'><ImagePlayer pictures={slideData}/></div>
       <Icon/>

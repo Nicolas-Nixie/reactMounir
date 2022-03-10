@@ -29,10 +29,11 @@ const ImagePlayer = ({ pictures }) => {
     }
     
   return (
-    <div className={style.container}>
-        <img className="img" src={`${img.src}`} />
-        { pictures.length > 1 && <button className="left-btn" onClick={() => moveLeft()}>Left</button> }
-        { pictures.length > 1 && <button className="right-btn" onClick={() => moveRight()}>Right</button> }
+    <div >
+        <img className={style.container} src={`${img.src}`} />
+        <br/>
+        <div className={style.button}>{ pictures.length > 1 && <button className={style.leftbtn} onClick={() => moveLeft()}>Left</button> }
+        { pictures.length > 1 && <button className="right-btn" onClick={() => moveRight()}>Right</button> }</div>
     </div>
   );
 };

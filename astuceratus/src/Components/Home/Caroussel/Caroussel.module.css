@@ -1,5 +1,16 @@
 .container {
   display: flex;
-  width:100vw;
+  width:75vw;
   flex-flow: row wrap;
+  margin-left: 150px;
 }
+
+.button {
+  margin: 25px;
+  width: 100vw;
+}
+
+.leftbtn {
+  margin-left: 45vw;
+}
+
