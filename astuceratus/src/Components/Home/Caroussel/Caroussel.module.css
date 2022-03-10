@@ -5,14 +5,22 @@
   margin-left: 150px;
 }
 
-.button {
-
-}
-
 .leftbtn {
   margin-left: 600px;
+  background-color: rgb(73, 73, 73);
+  border-color: rgb(73, 73, 73);
+  border-radius: 15%;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: 'Roboto', sans-serif;
 }
 
 .rightbtn {
   margin-left: 25px;
+  background-color: rgb(73, 73, 73);
+  border-color: rgb(73, 73, 73);
+  border-radius: 15%;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: 'Roboto', sans-serif;
 }

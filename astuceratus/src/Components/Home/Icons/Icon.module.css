@@ -3,7 +3,7 @@
     flex-direction: row; /*orientation de la navbar*/
     gap: 5vh; /*espacement des liens*/
     padding: 20px;
-    margin-left: 450px;
+    margin-left: 490px;
 }
 
 .icon img { 
