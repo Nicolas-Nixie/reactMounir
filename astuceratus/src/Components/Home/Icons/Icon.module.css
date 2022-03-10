@@ -1,0 +1,11 @@
+.icon {
+    display: flex; /*aligner les elements*/
+    flex-direction: row; /*orientation de la navbar*/
+    gap: 5vh; /*espacement des liens*/
+    padding: 20px;
+    margin-left: 450px;
+}
+
+.icon img { 
+    height: 25px;
+}

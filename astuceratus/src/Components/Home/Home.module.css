@@ -1,0 +1,19 @@
+.home {
+    display: flex; /*aligner les elements*/
+    flex-direction: row; /*orientation de la navbar*/
+    gap: 5vh; /*espacement des liens*/
+    padding: 5px;
+    margin-left: 275px;
+    align-items: center;
+}
+
+.home img { /*s'utilise pour toutes les image du header*/
+    height: 150px;
+}
+
+.home h1 {
+    color: #DDDDDD;
+    font-size:70px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+}

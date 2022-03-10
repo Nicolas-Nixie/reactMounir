@@ -1,0 +1,25 @@
+.header{
+    display: flex; /*aligner les elements*/
+    flex-direction: row; /*orientation de la navbar*/
+    gap: 20px; /*espacement des liens*/
+    padding: 20px;
+    background-color: #373737;
+    align-items: center;
+}
+
+.header img{ /*s'utilise pour toutes les image du header*/
+    height: 25px;
+}
+
+.header a{ /*style des liens du header*/
+    color: #DDDDDD;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+}
+
+.header a:hover{ /*couleur de fond de survol*/
+    color: #C3C3C3;
+}
+
