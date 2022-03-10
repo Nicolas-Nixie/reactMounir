@@ -6,11 +6,13 @@
 }
 
 .button {
-  margin: 25px;
-  width: 100vw;
+
 }
 
 .leftbtn {
-  margin-left: 45vw;
+  margin-left: 600px;
 }
 
+.rightbtn {
+  margin-left: 25px;
+}
