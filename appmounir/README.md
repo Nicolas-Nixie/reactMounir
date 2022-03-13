@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# Rendu de projet
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Nous utilisons tout au long du projet le langage JSX qui permets de facilité l'écriture du code en des applications Réact.
 
-## Available Scripts
+Decouverte du react a traver les premiers composants. Nous avons vu que chaque composant est une focntion ecrit de la fonction suivante : 
 
-In the project directory, you can run:
+function MonComposant () => {
+  Return;
+};
 
-### `npm start`
+export default MonComposant;
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+les parenthèse permetent de passer des parametres ou des fontion qui senome alors : Call-back. Le mot clé return retourn l'état du composant
+La derniere ligne du composant contenant le mot cle export sert a exporter le composant afin qu'il soit appelé (ou importer via le mot clé import) dans le reste de notre code.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Dans les différents partie nous avons fait un premier composant dont voici le résultat :
 
-### `npm test`
+![J1](https://user-images.githubusercontent.com/63167717/157195488-f18a9206-b181-4960-a763-8696cd0cece9.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Puis nous avons fait un tableau d'objets dont le résultat sur notre page est :
 
-### `npm run build`
+![listObjet](https://user-images.githubusercontent.com/63167717/157195610-2a85f5ef-1c10-4cb4-8f03-0ca381ac0b5d.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Puis nous avons fais dans champs nous permetant d'ajouter des lignes a notre tableau :
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![Envoi formulaire](https://user-images.githubusercontent.com/63167717/157208371-089a6664-ba41-4bc4-b899-fdc70889d28c.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Nous avons mis en place les Routes :
 
-### `npm run eject`
+Il fichier router contenant le code qui sera afficher lors du click sur le liens :
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+export default function Rats() {
+    return (
+      <main style={{ padding: "1rem 0" }}>
+        <h2>Mega rats</h2>
+      </main>
+    );
+  }
+```
+ le fichier App.js contient quand à lui l'export du composant :
+ ```
+ return (
+    <div className="App">
+      <header className="App-header">
+        <Link to="/rats">Rats</Link>
+        <Button premsProps={"fion"}/>
+        <Tasklist list={myTaskList} />
+        <TaskList list={myTaskList} />
+      </header>
+    </div>
+  );
+ ```
+ 
+ Le resutltat sera sur la page principale : 
+ 
+ link![image](https://user-images.githubusercontent.com/63167717/158079277-28f660e6-ec42-473a-a390-3717cfffbd82.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+le resltat du lien cliqué : 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+retourLink![image](https://user-images.githubusercontent.com/63167717/158079294-776a53b0-8ac7-49cf-a343-ff632434bb1f.png)
