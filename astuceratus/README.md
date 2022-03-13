@@ -1,8 +1,8 @@
-#Rendu de projet
+# Rendu de projet
 
 Le projet AstuceRatus est site qui permets de réunir des astuces, coupons ou bon de réduction et code promo pour le plus grand nombre.
 
-##Création ndu projet : 
+## Création ndu projet : 
 
 Le projet est créer via le CRA ; la commande est entrée via le terminal : 
 ```
@@ -19,7 +19,9 @@ Le projets est organisé de la façon suivante :
 
 ![image](https://user-images.githubusercontent.com/63167717/158079999-dbbe175a-e215-4f51-8de5-f4b2583c930a.png)
 
-##Premier composant :
+Chaque fichier du porojet s'appel une modale et devra être importer pour être utiliser.
+
+## Premier composant :
 
 Le premier composant est la homepage :
 
@@ -41,9 +43,11 @@ export default Home;
 
 ![image](https://user-images.githubusercontent.com/63167717/158080179-16db498d-1450-4edd-a630-a0fb3fb47d98.png)
 
-Le composant 'Home' est une fontion auxquel nous passon en parametre le term props qui signifie 'propriété' afin que les props défie dans la fonction ou composant, puisent être réutilisé.
+Le composant 'Home' est une fontion auxquel nous passon en parametre le term props qui signifie 'propriété' afin que les props défie dans la fonction ou composant, puisent être réutilisé. Il est aussi possible d'utiliser un 'spread operato' écrit de cette fonçon : '{...props} dans les objets et permet de rendre le composant plus fléxible.(mon niveau de me permets pas de l'utiliser dans ce projet)
 
-Le fichier composant commence par une majuscule afin d'être vu comme un composant a part entière./
+Il est possible de passer un paramètre une fonction que l'on nomera alors un call-back. (n'étant pas de mon niveau j'ai pas su en mettre en place).
+
+Le fichier composant commence par une majuscule afin d'être vu comme un composant a part entière.
 
 le style de la page sera importé via une méthode : module CSS. Pour utiliser ce module CSS il faut créer un fichier nom.module.css puis appeler de le fichier composant :
 
@@ -143,7 +147,16 @@ const ImagePlayer = ({ pictures }) => {
 
 export default ImagePlayer;
 ```
-Ici nous utilison un hook 
-et affihce le résultat suivant : 
+Ici nous utilison un hook 'useState' afin de déclarer l'état local du composant. Ici il s'agit de faire changer les images via un défillement.
+
+Une hook est un outil permetant de récupéré un état locak et d'autre foncionalités sans avoir était écrite dans une classe.
+
+Nous utilisont aussi un effet de bord ou 'Side efffect'qui permets a l'application de modifier ce que react ne sait pas modifier. Ici 'useEffect' va modifié l'image affiché.
+
+Cela affihce le résultat suivant : 
 
 ![image](https://user-images.githubusercontent.com/63167717/158081170-8f9fcc76-2f6b-4da6-9bb9-e1be9a2a80f0.png)
+
+
+Je n'ai pas pu utiliser le hook : 'useReducer' qui sert a remplacer useState pour géré des de logiques plus complexe de l'application.
+Je n'ai pas non plus utiliser d'appel API en creant par exmemple un objet 'Context' dans la consatant 'createContext'(au dessus de mon niveau). 
