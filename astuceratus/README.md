@@ -1,26 +1,149 @@
-# Rendu de projet
+#Rendu de projet
+
+Le projet AstuceRatus est site qui permets de réunir des astuces, coupons ou bon de réduction et code promo pour le plus grand nombre.
+
+##Création ndu projet : 
+
+Le projet est créer via le CRA ; la commande est entrée via le terminal : 
+```
+npx create-react-app astuceratus
+```
+cette commande permets de créer l'app avec une arborescence, mais surtout de mettre en place un environement de developpement configuré.
 
 Nous utilisons tout au long du projet le langage JSX qui permets de facilité l'écriture du code en des applications Réact.
 
-Decouverte du react a traver les premiers composants. Nous avons vu que chaque composant est une focntion ecrit de la fonction suivante : 
 
-function MonComposant () => {
-  Return;
+##Organisation du porjet :
+
+Le projets est organisé de la façon suivante : 
+
+![image](https://user-images.githubusercontent.com/63167717/158079999-dbbe175a-e215-4f51-8de5-f4b2583c930a.png)
+
+##Premier composant :
+
+Le premier composant est la homepage :
+
+```
+import React from "react";
+import styles from "./Home.module.css";
+
+const Home = (props) => {
+    return (
+        <div className={styles.home}>
+            <img id="logoRat" src="/logoRat.png" alt="logoRat"/> 
+            <h1>Astuce Ratus ...</h1> 
+        </div>
+    )
+}
+
+export default Home;
+```
+
+![image](https://user-images.githubusercontent.com/63167717/158080179-16db498d-1450-4edd-a630-a0fb3fb47d98.png)
+
+Le composant 'Home' est une fontion auxquel nous passon en parametre le term props qui signifie 'propriété' afin que les props défie dans la fonction ou composant, puisent être réutilisé.
+
+Le fichier composant commence par une majuscule afin d'être vu comme un composant a part entière./
+
+le style de la page sera importé via une méthode : module CSS. Pour utiliser ce module CSS il faut créer un fichier nom.module.css puis appeler de le fichier composant :
+
+```
+import styles from "./Home.module.css";
+```
+
+et utilisé de la façon suivante : 
+
+```
+ <div className={styles.home}>
+            <img id="logoRat" src="/logoRat.png" alt="logoRat"/> 
+            <h1>Astuce Ratus ...</h1> 
+        </div>
+```
+
+J'ai par la suite créer la Navbar contenant des liens routés. les routes s'utiliser grâce a l'import du module : 
+
+```
+import { Link } from "react-router-dom";
+```
+
+J'ai ensuite placé les liens des routes dans les des balises '<link>'
+
+```
+<header className={styles.header}>
+            <img id="logoRat" src="/logoRat.png" alt="logoRat"/> 
+            <Link to="/rats">Home</Link>
+            <Link to="/form">Contact</Link>
+            <Link to="/rats">Help</Link>
+            <Link to="/rats">About</Link>
+        </header>
+    )
+```
+ Les liens retournes (par le mot clé 'to=""') vers le composant indiqué. Par exemple le fichier Rats.jsx'
+ 
+ Le fichier Rats.jsx est un composant qui affiche les mots : 'Mega rats' grâce au code suivant : 
+ 
+ ```
+ export default function Rats() {
+    return (
+      <main style={{ padding: "1rem 0" }}>
+        <h2>Mega rats</h2>
+      </main>
+    );
+  }
+ ```
+ 
+ le liens retourn alors l'affichage suivant : 
+ 
+ ![image](https://user-images.githubusercontent.com/63167717/158081022-50403376-8ee3-46e6-8573-27b8e84523b6.png)
+
+Enfin j'ai mis en place un caroussel en utilisant le composant suivant :
+
+```
+import React, { useEffect, useState } from "react"; //l'effet de bord (ici) sert a récupérer chaque modification du tableau des images
+import style from "./Caroussel.module.css";
+
+const ImagePlayer = ({ pictures }) => {
+
+    const [img, setImg] = useState({
+        src: pictures[0],
+        position: 0
+    });
+
+    useEffect(() => {
+        setImg({ ...img, src: pictures[0] })
+    }, [pictures])
+
+    var moveRight = () => {
+        if (img.position >= pictures.length - 1) {
+            setImg({ src: pictures[0], position: 0 })
+            return;
+        }
+        setImg({ src: pictures[img.position + 1], position: img.position + 1 })
+    }
+
+    var moveLeft = () => {
+        if(img.position < 1) {
+            setImg({ src: pictures[pictures.length - 1], position: pictures.length - 1 })
+            return;
+        }
+        setImg({ src: pictures[img.position - 1], position: img.position - 1 })
+    }
+    
+  return (
+    <div >
+        <img className={style.container} src={`${img.src}`} />
+        <br/>
+        <div className={style.button}>
+            { pictures.length > 1 && <button className={style.leftbtn} onClick={() => moveLeft()}>Left</button> }
+            { pictures.length > 1 && <button className={style.rightbtn} onClick={() => moveRight()}>Right</button> }
+        </div>
+    </div>
+  );
 };
 
-export default MonComposant;
+export default ImagePlayer;
+```
+Ici nous utilison un hook 
+et affihce le résultat suivant : 
 
-les parenthèse permetent de passer des parametres ou des fontion qui senome alors : Call-back. Le mot clé return retourn l'état du composant
-La derniere ligne du composant contenant le mot cle export sert a exporter le composant afin qu'il soit appelé (ou importer via le mot clé import) dans le reste de notre code.
-
-Dans les différents partie nous avons fait un premier composant dont voici le résultat :
-
-![J1](https://user-images.githubusercontent.com/63167717/157195488-f18a9206-b181-4960-a763-8696cd0cece9.png)
-
-Puis nous avons fait un tableau d'objets dont le résultat sur notre page est :
-
-![listObjet](https://user-images.githubusercontent.com/63167717/157195610-2a85f5ef-1c10-4cb4-8f03-0ca381ac0b5d.png)
-
-Puis nous avons fais dans champs nous permetant d'ajouter des lignes a notre tableau :
-
-![Envoi formulaire](https://user-images.githubusercontent.com/63167717/157208371-089a6664-ba41-4bc4-b899-fdc70889d28c.png)
+![image](https://user-images.githubusercontent.com/63167717/158081170-8f9fcc76-2f6b-4da6-9bb9-e1be9a2a80f0.png)
