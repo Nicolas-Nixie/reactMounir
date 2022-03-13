@@ -1,6 +1,6 @@
 # Rendu de projet
 
-Il y a sur ce repos deux projet. Le premier est celui que nous avons fait au fil du cours.
+Il y a sur ce repos deux projets. Le premier est celui que nous avons fait au fil du cours.
 
 Le second est celui demandé afin d'être rendu.
 
